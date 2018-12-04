@@ -1,0 +1,662 @@
+<project>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>Summarization</groupId>
+    <artifactId>Label-driven</artifactId>
+    <version>1.0.0</version>
+    <name>Label-driven summarization</name>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+
+        <junit.platform.version>1.0.1</junit.platform.version>
+        <junit.jupiter.version>5.0.2</junit.jupiter.version>
+        <junit.vintage.version>4.12.2</junit.vintage.version>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>copy-dependencies</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>
+                                ${project.build.directory}/lib
+                            </outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <!-- Build an executable JAR -->
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <classpathPrefix>lib/</classpathPrefix>
+                            <mainClass>label.driven.summarization.Main</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-algorithms</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-compiler_api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-engine</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-file_loaders</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-gm</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-gm_legacy</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-hdfs</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-loader_api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-pgql</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-runtime</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-spark1</artifactId>
+            <version>1.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-spark2</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-spark_common</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-spark_loader</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-two_tables_loader_pgx</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-common</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-shell</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>aopalliance</groupId>
+            <artifactId>aopalliance-aopalliance</artifactId>
+            <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>argparse4j</groupId>
+            <artifactId>argparse4j-argparse4j</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>blueprints</groupId>
+            <artifactId>blueprints-blueprints-core</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>callisto</groupId>
+            <artifactId>callisto-callisto-rts</artifactId>
+            <version>1.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-cli</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-codec</artifactId>
+            <version>1.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-collections</artifactId>
+            <version>3.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-configuration</artifactId>
+            <version>1.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-configuration2</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-configuration2-jackson</artifactId>
+            <version>2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-io</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-lang3</artifactId>
+            <version>3.3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-logging</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons</groupId>
+            <artifactId>commons-commons-vfs2</artifactId>
+            <version>2.2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>fastutil</groupId>
+            <artifactId>fastutil-fastutil</artifactId>
+            <version>8.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>fluent</groupId>
+            <artifactId>fluent-fluent-hc</artifactId>
+            <version>4.5.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>gm</groupId>
+            <artifactId>gm-gm-compiler</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>gm</groupId>
+            <artifactId>gm-gm-compiler-api</artifactId>
+            <version>0.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>graal</groupId>
+            <artifactId>graal-graal-sdk</artifactId>
+            <version>0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>graph</groupId>
+            <artifactId>graph-graph-query</artifactId>
+            <version>2018.05.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>green</groupId>
+            <artifactId>green-green-marl</artifactId>
+            <version>2017.11.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>groovy</groupId>
+            <artifactId>groovy-groovy-all</artifactId>
+            <version>2.4.15</version>
+        </dependency>
+
+        <dependency>
+            <groupId>guava</groupId>
+            <artifactId>guava-guava</artifactId>
+            <version>14.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>guice</groupId>
+            <artifactId>guice-guice</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>guice</groupId>
+            <artifactId>guice-guice-multibindings</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop</groupId>
+            <artifactId>hadoop-hadoop-auth</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop</groupId>
+            <artifactId>hadoop-hadoop-common</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>hadoop</groupId>
+            <artifactId>hadoop-hadoop-hdfs</artifactId>
+            <version>2.6.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>htrace</groupId>
+            <artifactId>htrace-htrace-core4</artifactId>
+            <version>4.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>httpclient</groupId>
+            <artifactId>httpclient-httpclient</artifactId>
+            <version>4.5.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>httpcore</groupId>
+            <artifactId>httpcore-httpcore</artifactId>
+            <version>4.4.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-annotations</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-core</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-core-asl</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-databind</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-dataformat</artifactId>
+            <version>2.9.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jackson</groupId>
+            <artifactId>jackson-jackson-mapper</artifactId>
+            <version>1.9.13</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jansi</groupId>
+            <artifactId>jansi-jansi</artifactId>
+            <version>1.16</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist-javassist-3.22.0</artifactId>
+            <version>3.22.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.annotation</groupId>
+            <artifactId>javax.annotation-javax.annotation-api</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject-javax.inject</artifactId>
+            <version>1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject-javax.inject-2.5.0</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.ws.rs</groupId>
+            <artifactId>javax.ws.rs-javax.ws.rs-api</artifactId>
+            <version>2.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-client</artifactId>
+            <version>2.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-common</artifactId>
+            <version>2.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-container</artifactId>
+            <version>2.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-media-jaxb</artifactId>
+            <version>2.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-media-multipart</artifactId>
+            <version>2.25.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jersey</groupId>
+            <artifactId>jersey-jersey-server</artifactId>
+            <version>2.26</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jline</groupId>
+            <artifactId>jline-jline</artifactId>
+            <version>2.14.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j-log4j-api</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j-log4j-core</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j-log4j-jcl</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j-log4j-slf4j</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>mimepull</groupId>
+            <artifactId>mimepull-mimepull</artifactId>
+            <version>1.9.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ojdbc8</groupId>
+            <artifactId>ojdbc8-ojdbc8</artifactId>
+            <version>8.12.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.metaborg.spoofax.core.uber</groupId>
+            <artifactId>org.metaborg.spoofax.core.uber-org.metaborg.spoofax.core.uber</artifactId>
+            <version>2.4.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>osgi</groupId>
+            <artifactId>osgi-osgi-resource</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pcollections</groupId>
+            <artifactId>pcollections-pcollections</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgql</groupId>
+            <artifactId>pgql-pgql-lang</artifactId>
+            <version>2018.05.14</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-filter</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-query_optimizer</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>pgx</groupId>
+            <artifactId>pgx-pgx-two_tables_loader_common</artifactId>
+            <version>3.1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>protobuf</groupId>
+            <artifactId>protobuf-protobuf-java</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>reflections</groupId>
+            <artifactId>reflections-reflections</artifactId>
+            <version>0.9.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>rxjava</groupId>
+            <artifactId>rxjava-rxjava-core</artifactId>
+            <version>0.20.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>servlet</groupId>
+            <artifactId>servlet-servlet-api</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>slf4j</groupId>
+            <artifactId>slf4j-slf4j-api</artifactId>
+            <version>4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>snakeyaml</groupId>
+            <artifactId>snakeyaml-snakeyaml</artifactId>
+            <version>1.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>swagger</groupId>
+            <artifactId>swagger-swagger-annotations</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>swagger</groupId>
+            <artifactId>swagger-swagger-core</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>swagger</groupId>
+            <artifactId>swagger-swagger-jaxrs</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>swagger</groupId>
+            <artifactId>swagger-swagger-jersey2</artifactId>
+            <version>2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>swagger</groupId>
+            <artifactId>swagger-swagger-models</artifactId>
+            <version>1.5.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>tomcat-tomcat-embed-core</artifactId>
+            <version>9.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>tomcat-tomcat-embed-jasper</artifactId>
+            <version>9.0.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>truffle</groupId>
+            <artifactId>truffle-truffle-api</artifactId>
+            <version>0.33</version>
+        </dependency>
+
+        <dependency>
+            <groupId>ucp</groupId>
+            <artifactId>ucp-ucp</artifactId>
+            <version>12.2.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>validation</groupId>
+            <artifactId>validation-validation-api</artifactId>
+            <version>1.1.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>sa</groupId>
+            <artifactId>jdi</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${java.home}/../lib/sa-jdi.jar</systemPath>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.3</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

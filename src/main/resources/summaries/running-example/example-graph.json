@@ -1,0 +1,13 @@
+{
+  "format":"edge_list",
+  "uri":"example-graph.edgelist",
+  "vertex_id_type":"integer",
+  "vertex_labels":true,
+  "edge_label":true,
+  "vertex_props":[],
+  "loading": {
+    "load_vertex_labels":true,
+    "load_edge_label":true
+  },
+  "separator":" "
+}

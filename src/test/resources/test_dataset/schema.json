@@ -1,0 +1,30 @@
+{
+  "config": {
+    "mergingProcedure": [
+      "EVALUATION",
+      "FREQUENCY_SINK_NODES",
+      "FREQUENCY_SOURCE_NODES",
+      "CLUSTERING_EDGES",
+      "INNER_MERGE_FREQ_LABEL",
+      "TARGET_MERGE"
+    ],
+    "epsilon": 0
+  },
+  "vertexProperties": [
+    {
+      "label": "ALL",
+      "allowProperties": [
+        {
+          "name": "GROUPING",
+          "type": "integer",
+          "values": "[1,100]",
+          "mergeStrategy": "IGNORE"
+        }
+      ]
+    },
+    {
+      "label": "Person",
+      "allowProperties": []
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "format":"edge_list",
+  "uri":"toy-graph.edgelist",
+  "vertex_id_type":"integer",
+  "vertex_labels":true,
+  "edge_label":true,
+  "vertex_props":[
+    {
+      "name":"attr1",
+      "type":"string"
+    },
+    {
+      "name":"attr2",
+      "type":"string"
+    }
+  ],
+  "loading": {
+    "load_vertex_labels":true,
+    "load_edge_label":true
+  },
+  "separator":" "
+}

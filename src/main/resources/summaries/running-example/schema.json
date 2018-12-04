@@ -1,0 +1,49 @@
+{
+  "config": {
+    "mergingProcedure": [
+      "EVALUATION",
+      "FREQUENCY_SINK_NODES",
+      "FREQUENCY_SOURCE_NODES",
+      "INNER_MERGE_FREQ_LABEL",
+      "TARGET_MERGE"
+    ],
+    "epsilon": 0,
+    "theta": 0
+  },
+  "vertexProperties": [
+    {
+      "label": "ALL",
+      "allowProperties": [
+        {
+          "name": "GROUPING",
+          "type": "string",
+          "values": "[1,100]",
+          "mergeStrategy": "IGNORE"
+        }
+      ]
+    },
+    {
+      "label": "Person",
+      "allowProperties": [
+      ]
+    },
+    {
+      "label": "Forum",
+      "allowProperties": [
+      ]
+    },
+    {
+      "label": "Reply",
+      "allowProperties": [
+      ]
+    }, {
+      "label": "Message",
+      "allowProperties": [
+
+      ]
+    }
+  ],
+  "computeConcatenationProperties" : true,
+  "allLabelsAllowed": true,
+  "allowedLabels": ["l6:l0", "l6:l1", "l3:l3", "l3:l1"]
+}

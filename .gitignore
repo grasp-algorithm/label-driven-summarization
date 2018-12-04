@@ -1,0 +1,7 @@
+
+.idea/
+label-driven-summarization.iml
+logs/
+target/
+evalSummary.txt
+.DS_Store
