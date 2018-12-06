@@ -9,13 +9,13 @@
 5. Execute
 
 ```bash
-$ java -cp Label-driven-1.0.0-jar-with-dependencies.jar -Xmx2048M -Dpgx.max_off_heap_size=1024000 -XX:-UseGCOverheadLimit -Dlog4j.debug -Dlog4j.configurationFile=~/label-driven-summarization/src/main/resources/log4j.properties label.driven.summarization.Main "~/graphcon/query-driven-summarization/src/main/resources/summaries/1000_social_network_none_attribut" 
+$ java -cp Label-driven-1.0.0-jar-with-dependencies.jar -Dpgx.max_off_heap_size=<HEAD_SIZE> -Dlog4j.configurationFile=<LOG_PROPERTIES_PATH> label.driven.summarization.Main <FOLDER_WITH_FILES>
 ```
 
 
-# Gmark
+# How to generate graphs
 
-1. Generate graph in gMark
+You can generate an artificial graph using [gMark](https://github.com/graphMark/gmark). Find the instructions in their own repository. Here some examples:
 
 ```bash
 $ ./test -n 1000 -a -c ../use-cases/social-network.xml -g ../demo/social/social-1000 -w ../demo/social/social-workload-1000.xml -r ../demo/social/
