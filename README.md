@@ -7,7 +7,7 @@ GRASP is a query-driven summarization algorithm targeting property graphs. It al
 1. Clone the project or download the project.
 2. It requires the latest version of [PGX 3.1](https://www.oracle.com/technetwork/oracle-labs/parallel-graph-analytix/downloads/index.html) (courtesy of Oracle Labs).
 3. Execute the file [`dependencies-3.1.0.sh`](label-driven-summarization/scripts/dependencies-3.1.0.sh). But first modify your PGX_HOME and the three variables in the file to point to PGX libraries.
-4. Execute `mvn assembly:assembly -DdescriptorId=jar-with-dependencies`.
+4. Execute `mvn clean compile package`.
 5. Execute the following command:
 
 ```bash
