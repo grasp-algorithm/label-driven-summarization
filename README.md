@@ -1,6 +1,6 @@
 ## Query driven summarization
 
-GRASP is a query-driven summarization algorithm targeting property graphs. It allows the approximate estimation of counting graph queries on property graphs.
+GRASP is a query-driven summarization algorithm targeting property graphs. It allows for the approximate estimation of counting graph queries on property graphs.
 
 # Getting Started
 
