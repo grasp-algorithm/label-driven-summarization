@@ -40,7 +40,7 @@ $ ./test -n 1000 -a -c ../use-cases/test.xml -g ../demo/test/test-1000 -w ../dem
 ```
 
 # Configuration
-A configuration file as an example can be found [here](https://github.com/grasp-algorithm/label-driven-summarization/blob/master/src/main/resources/summaries/running-example/schema.json).
+An example configuration file as an example can be found [here](https://github.com/grasp-algorithm/label-driven-summarization/blob/master/src/main/resources/summaries/running-example/schema.json).
 The important attributes are:
 
 * *mergingProcedure*: Where should be included the selected heuristic (TARGET_MERGE or SOURCE_MERGE).
