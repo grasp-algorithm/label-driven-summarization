@@ -45,5 +45,5 @@
   ],
   "computeConcatenationProperties" : true,
   "allLabelsAllowed": true,
-  "allowedLabels": ["l6:l0", "l6:l1", "l3:l3", "l3:l1"]
+  "allowedLabels": []
 }
