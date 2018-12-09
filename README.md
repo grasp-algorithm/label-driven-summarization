@@ -79,4 +79,6 @@ Where:
 * **crVertices**: the compression ratio on the vertices.
 * **crEdges**: the compression ratio on the edges.
 
+** _Since the available version of PGX works on homogeneous graphs, rather than on heterogeneous ones, we padded each node in the graph summary with the same properties as in the other nodes_
+
 Once the summary is build, you can pass to the [next project](https://github.com/grasp-algorithm/approximative-query-processing) to execute the queries.
